@@ -5,7 +5,26 @@ Site tamamen statik (HTML/CSS/JS, build yok). Vercel statik dosyaları olduğu g
 
 ---
 
-## Adım 1 - GitHub'a push
+## En hızlı yol - Vercel CLI (GitHub gerekmez)
+Makinende node/npx var; tek komutla deploy:
+```bash
+cd /Users/salihdurmus/Desktop/navex-build/site
+npx vercel          # tarayıcıda Vercel'e giriş yap, soruları Enter'la geç -> preview URL
+npx vercel --prod   # production (canlı) deploy
+```
+Bu, `site/` klasörünü doğrudan yayınlar. Sonra Adım 3 (formlar) ve Adım 4 (domain) ile devam et.
+Otomatik-deploy (her push'ta) istiyorsan aşağıdaki GitHub yolunu kullan.
+
+---
+
+## Adım 1 - GitHub'a push (otomatik-deploy isteyenler için)
+Not: bu makinede `gh` kurulu değil. GitHub'da repo'yu **web'den** aç (github.com/new), sonra:
+```bash
+cd /Users/salihdurmus/Desktop/navex-build
+git remote add origin https://github.com/KULLANICI/navex-site.git
+git branch -M main && git push -u origin main
+```
+(Alternatif: `brew install gh && gh auth login` ile CLI'dan da açabilirsin.)
 Repo zaten lokalde git (commit'li). GitHub'da boş bir repo açıp bağla:
 
 ```bash
