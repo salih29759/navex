@@ -115,4 +115,21 @@
       parallax();
     }
   }
+
+  /* Back to top (created in JS, so no per-page markup needed) */
+  var toTop = document.createElement("button");
+  toTop.className = "to-top";
+  toTop.type = "button";
+  toTop.setAttribute("aria-label", "Back to top");
+  toTop.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+  document.body.appendChild(toTop);
+  toTop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+  var toggleTop = function () {
+    if (window.scrollY > 600) toTop.classList.add("show");
+    else toTop.classList.remove("show");
+  };
+  window.addEventListener("scroll", toggleTop, { passive: true });
+  toggleTop();
 })();
