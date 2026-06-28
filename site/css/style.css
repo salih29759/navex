@@ -415,6 +415,42 @@ p { color: var(--text); }
 .industry-row__body h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin-bottom: .7rem; }
 .industry-row__body p { color: var(--muted); max-width: 50ch; }
 
+/* ---------- Lifecycle strip ---------- */
+.lifecycle { margin-top: 3rem; }
+.lc-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
+.lc-track::before { content: ""; position: absolute; top: 19px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-soft)); opacity: .45; z-index: 0; }
+.lc-node { position: relative; z-index: 1; }
+.lc-node__dot { width: 40px; height: 40px; border-radius: 50%; background: var(--white); border: 2px solid var(--gold); color: var(--navy); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: .95rem; margin-bottom: 1rem; }
+.lc-node h3 { font-size: 1.06rem; margin-bottom: .35rem; }
+.lc-node p { color: var(--muted); font-size: .92rem; }
+
+/* ---------- 3 points (difference / independence) ---------- */
+.points-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem 2.2rem; margin-top: 3rem; }
+.point .ic { color: var(--gold); margin-bottom: .7rem; }
+.point h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+.point p { color: var(--muted); font-size: .96rem; }
+.section--dark .point p { color: var(--on-dark-dim); }
+
+/* ---------- Founder quote ---------- */
+.founder-quote { max-width: 36ch; margin: 0 0 2.6rem; }
+.founder-quote blockquote { margin: 0; font-size: clamp(1.4rem, 2.8vw, 2.1rem); font-weight: 600; line-height: 1.26; letter-spacing: -.02em; color: var(--navy); }
+.founder-quote cite { display: block; margin-top: 1rem; font-size: .95rem; font-style: normal; color: var(--muted); }
+
+/* ---------- Featured insight ---------- */
+.post-card--featured { grid-column: 1 / -1; flex-direction: row; }
+.post-card--featured .post-card__img { aspect-ratio: auto; flex: 1 1 52%; min-height: 300px; }
+.post-card--featured .post-card__body { flex: 1 1 48%; justify-content: center; padding: 2.5rem; gap: .7rem; }
+.post-card--featured h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
+
+/* ---------- Newsletter ---------- */
+.newsletter { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.newsletter__form { display: flex; gap: .8rem; }
+.newsletter__form input { flex: 1; font: inherit; padding: .85rem .95rem; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.07); color: var(--white); }
+.newsletter__form input::placeholder { color: var(--on-dark-dim); }
+.newsletter__form input:focus { outline: none; border-color: var(--gold-soft); box-shadow: 0 0 0 3px rgba(79,166,190,.15); }
+.newsletter__form .btn { background: var(--gold); color: var(--white); border-color: var(--gold); }
+.newsletter__form .btn:hover { background: var(--gold-soft); border-color: var(--gold-soft); }
+
 /* ---------- Reveal animation (progressive enhancement) ---------- */
 html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.21,.6,.35,1), transform .7s cubic-bezier(.21,.6,.35,1); }
 html.js .reveal.is-visible { opacity: 1; transform: none; }
@@ -454,6 +490,12 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .contact-grid { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .case-grid { grid-template-columns: 1fr 1fr; }
+  .lc-track { grid-template-columns: 1fr 1fr; }
+  .lc-track::before { display: none; }
+  .points-3 { grid-template-columns: 1fr 1fr; }
+  .post-card--featured { flex-direction: column; }
+  .post-card--featured .post-card__img { flex: auto; aspect-ratio: 16 / 10; min-height: 0; }
+  .newsletter { grid-template-columns: 1fr; }
   .serve-col { border-top: 0; border-bottom: 1px solid var(--line); margin-right: 0; padding: 1.4rem 0; }
   .serve-col:first-child { border-top: 2px solid var(--gold); }
   .serve-col:last-child { border-bottom: 0; }
@@ -468,6 +510,9 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .values-grid { grid-template-columns: 1fr; }
   .post-grid { grid-template-columns: 1fr; }
   .case-grid { grid-template-columns: 1fr; }
+  .lc-track { grid-template-columns: 1fr; }
+  .points-3 { grid-template-columns: 1fr; }
+  .newsletter__form { flex-direction: column; }
 }
 
 /* ---------- Reduced motion ---------- */

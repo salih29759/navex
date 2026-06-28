@@ -70,7 +70,7 @@
       <div class="container">
         <div class="post-grid">
 
-          <article class="post-card reveal">
+          <article class="post-card post-card--featured reveal">
             <div class="post-card__img" style="background-image:url('assets/sea-freight.jpg')"></div>
             <div class="post-card__body">
               <div class="post-card__meta">Maritime PE &middot; Harun Duzgoren</div>
@@ -100,6 +100,24 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="newsletter">
+          <div class="reveal">
+            <span class="label">Stay close to the market</span>
+            <h2>Maritime PE insight, a few times a year.</h2>
+            <p class="lead">Occasional, substantive notes for investors and operators. No noise.</p>
+          </div>
+          <!-- Set the form action to your Formspree/Netlify endpoint to collect subscribers -->
+          <form class="newsletter__form reveal" action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="email" name="email" placeholder="Your email" aria-label="Your email" required />
+            <button class="btn btn--primary" type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
     </section>
