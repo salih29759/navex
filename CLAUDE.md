@@ -16,8 +16,9 @@ No build step. Open `site/index.html` directly, or serve statically:
 - **Realism rule:** never "Navex did X." All track record = *"our founding team's experience, prior to
   Navex."* Soften unverified claims. No generic-consultant language.
 - **Voice:** English, operator-led, honest, owner-centric.
-- **Brand:** navy `#1B2150` primary · gold `#C2A063` **accent only, never a background** · backgrounds
-  white / light-gray / navy. Keep the trident mark.
+- **Brand (Ink & Tide — committed 2026-06):** deep marine-blue ink `#13293C` primary · teal `#1C7E96`
+  **accent only, never a background** · backgrounds white / cool off-white / ink. Keep the trident mark.
+  **Supersedes** the old navy `#1B2150` + gold `#C2A063`; **do not reintroduce gold.** (See docs/05, docs/06.)
 - **Quality floor:** responsive, keyboard focus, `prefers-reduced-motion`, content visible without JS.
 - **Do not** copy competitor code/fonts/identity.
 
