@@ -1,41 +1,53 @@
-# Navex Capital — Website
+# Navex Capital - Website
 
-Operator-led maritime, transport & logistics advisory. Custom-coded marketing site.
-Plain HTML + CSS + vanilla JS — no build step. Deploy anywhere (Netlify / Vercel / GitHub Pages).
+Operator-led maritime, transport &amp; logistics advisory. Custom-coded marketing site.
+Plain HTML + CSS + vanilla JS, no build step. Deploy anywhere (Netlify / Vercel / GitHub Pages).
 
-## Structure
+## Run / preview
+No build step. Open `index.html`, or serve statically:
+`python3 -m http.server 8000 --directory site` then visit http://localhost:8000
+
+## Pages
 ```
-navex-site/
-  index.html        Home (built)
-  services.html     (todo)
-  industries.html   (todo)
-  case-studies.html (todo)
-  about.html        (todo)
-  insights.html     (todo)
-  contact.html      (todo)
-  css/style.css     Design system + page styles
-  js/main.js        Nav toggle, header scroll state, scroll-reveal
-  assets/           Images (swap placeholders for authentic maritime photos)
+index.html         Home (video hero, wedge, stats, services, photo band, sectors, proof)
+services.html      5 services + 4-step delivery approach
+industries.html    4 maritime sectors (alternating image/text)
+about.html         who/mission/vision, 6 core values, founder bio
+insights.html      article card grid
+contact.html       form (Name/Company/Title/Email/Message) + details
+case-studies.html  stat band + Situation/Role/Result cards (engagement scaffold)
+terms.html         terms of use + disclaimer
+css/style.css      design system + all components
+js/main.js         nav, header scroll state, staggered reveal, count-up, parallax
+assets/            real maritime photography + hero video loop + favicon/OG
 ```
 
-## Design system (CSS custom properties in css/style.css)
-- **Navy** `#1B2150` (primary deep) · **Navy-deep** `#141936` · **Navy-700** `#2A2E45` (text)
-- **Gold** `#C2A063` (accent only — hairlines, icons, button, trident) · **Gold-soft** `#D4B985`
-- **White** `#FFFFFF` · **Light gray** `#F4F4F2` (section break) · **Muted** `#6B6E80`
-- Type: **Fraunces** (display) · **Inter** (body) · **Spline Sans Mono** (eyebrows / coordinates / data)
-- Aesthetic: maritime chart — navy water, gold instrument, bathymetric hairlines, trident signature.
-- Rule: gold is an **accent**, never a background block. Backgrounds = white / light-gray / navy.
+## Design system: "Ink & Tide"
+Sector/competitor-driven (Pareto/EQT feel), independent of the old navy+gold logo. Sans-dominant,
+white-dominant, near-zero ornament, photography-forward.
 
-## Section pattern (reusable)
-`.section.section--light | --gray | --dark` + `.container` + `.eyebrow` + heading.
-`.reveal` = progressive scroll-in (visible without JS).
+- **Ink (primary)** `#13293C` deep marine blue. Dark sections, footer, headings.
+- **Ink-deep** `#0D1F2E` (CTA band). **Text** `#20303A`. **Muted** `#566570`.
+- **Accent (teal)** `#1C7E96` (+ on-dark `#4FA6BE`). Hairlines, icons, links, one button, trident.
+  Accent only, never a background block.
+- **Backgrounds** white `#FFFFFF` / cool off-white `#EFF2F3` / ink. Photography carries the contrast.
+- **Type** Hanken Grotesk (single family), weight-driven hierarchy. No serif, no mono.
+- Tokens live in `:root` of `css/style.css` (names `--navy` / `--gold` kept for stability; values are
+  the Ink & Tide palette).
 
-## Home sections (built)
-Hero → Why Navex (wedge) → Our edge (stats) → What we do (5 services) → Proof (engagement) → Who we serve → CTA band → Footer.
+## Motion (progressive enhancement)
+Hero is a real compressed video loop with a poster fallback. Scroll reveals are staggered; the stat
+band counts up; photo bands have a subtle parallax. All disabled under `prefers-reduced-motion`, and
+content is fully visible without JS.
 
 ## Copy rules
-- English (clients are US/EU PE). Operator-led, honest, owner-centric voice. No generic-consultant language.
-- **Realism rule:** all track record framed as "our founding team's operator experience, prior to Navex." Never "Navex did X." Soften unverified claims; cite sources.
+- English (clients are US/EU PE). Operator-led, honest, owner-centric. No generic-consultant glossy.
+- **Realism rule:** all track record is framed as "our founding team's operator experience, prior to
+  Navex." Never "Navex did X." Soften unverified claims.
+- **No em dashes (-) in site content.** Use commas, periods, or colons. (Run `grep -rn "—" .` to check.)
+- Maritime only. No road-freight / truck imagery.
 
-## Next
-Build remaining pages reusing the design system: Services (+ delivery approach 4-step), Industries (sector grid), Case Studies (stat band + 2-3 engagement cards + testimonial), About (team + values as icon grid), Insights (card grid), Contact (form: Name/Company/Title/Email/Message). Then swap placeholder visuals for authentic maritime photography.
+## Still to finalize
+- Real (anonymized) figures for two Case Studies cards, plus a permissioned testimonial (from Harun).
+- Contact form backend: set the form `action` to a Formspree endpoint, or add `data-netlify="true"`.
+- Optional: Harun's real founder photo on About, seamless boomerang hero loop, per-article Insights pages.

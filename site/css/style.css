@@ -1,6 +1,6 @@
 /* =========================================================
-   NAVEX CAPITAL — Design System & Styles
-   Direction: "Ink & Tide" — sector/competitor-driven (Pareto/EQT),
+   NAVEX CAPITAL - Design System & Styles
+   Direction: "Ink & Tide" - sector/competitor-driven (Pareto/EQT),
    independent of the old navy+gold logo. Sans-dominant, white-dominant,
    near-zero ornament, photography-forward.
    Palette: deep petrol-charcoal ink + muted teal accent + cool neutrals.
@@ -10,7 +10,7 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  /* color — Ink & Tide (deep marine blue) */
+  /* color - Ink & Tide (deep marine blue) */
   --navy:        #13293C;   /* primary ink (deep marine blue) */
   --navy-deep:   #0D1F2E;   /* deepest, CTA band */
   --navy-700:    #20303A;   /* text on light */
@@ -25,7 +25,7 @@
   --on-dark:     #E6ECEF;
   --on-dark-dim: #9DB0B8;
 
-  /* type — single family, sans-dominant */
+  /* type - single family, sans-dominant */
   --f-sans: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   /* scale */
@@ -163,7 +163,7 @@ p { color: var(--text); }
 .nav-toggle { display: none; background: none; border: 0; padding: .4rem; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: currentColor; margin: 5px 0; transition: transform .3s ease, opacity .3s ease; }
 
-/* ---------- Hero (cinematic photo montage — "video-like") ---------- */
+/* ---------- Hero (cinematic photo montage - "video-like") ---------- */
 .hero {
   position: relative; overflow: hidden;
   min-height: min(92vh, 860px);
@@ -358,6 +358,13 @@ p { color: var(--text); }
 .case-card dd.result b { color: var(--gold); font-weight: 700; }
 .case-card__src { margin-top: auto; font-size: .8rem; color: var(--muted); font-style: italic; }
 
+/* ---------- Legal / prose ---------- */
+.legal { max-width: 72ch; }
+.legal h2 { font-size: 1.22rem; margin-top: 2.2rem; }
+.legal h2:first-child { margin-top: 0; }
+.legal p { color: var(--muted); margin-top: .7rem; }
+.legal .updated { font-size: .9rem; color: var(--muted); margin-bottom: 1.5rem; }
+
 /* ---------- Contact form ---------- */
 .contact-grid { display: grid; grid-template-columns: 1.4fr .9fr; gap: clamp(2rem, 5vw, 4rem); margin-top: 3rem; align-items: start; }
 .form { display: grid; gap: 1.1rem; }
@@ -468,7 +475,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
   .reveal, html.js .reveal { opacity: 1; transform: none; }
-  /* no video motion — show the static poster instead */
+  /* no video motion - show the static poster instead */
   .hero__video { display: none !important; }
   .hero__media { background: url('../assets/hero-loop-poster.jpg') center/cover !important; }
 }

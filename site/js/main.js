@@ -1,4 +1,4 @@
-/* Navex Capital — interactions (deliberate, restrained) */
+/* Navex Capital - interactions (deliberate, restrained) */
 (function () {
   "use strict";
 
