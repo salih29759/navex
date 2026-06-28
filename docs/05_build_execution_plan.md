@@ -54,14 +54,22 @@ Bu plan boyunca her tasarım kararı bu üçüne karşı test edilir.
 
 ---
 
-## 2. Marka sabitleri (değişmez — docs/00 §2)
+## 2. Palet & marka (GÜNCELLENDİ — müşteri kararı, 2026-06-27)
 
-- **Navy** `#1B2150` (primary) · **Navy-deep** `#141936` · **Text** `#2A2E45`
-- **Gold** `#C2A063` — **YALNIZCA aksan** (ince çizgi, küçük ikon, tek buton, trident). Asla zemin bloğu değil.
-- **Zemin:** beyaz `#FFFFFF` / açık gri `#F4F4F2` / navy. Site açık↔navy alternatif; altın hiçbir yerde zemin değil.
-- **Mark:** trident (koru, sadeleştir).
+> **Önemli sapma:** Salih, eski logonun **navy+gold** sabitini bilinçli olarak kaldırdı — "logo beni
+> yanıltıyor, AI/template hissi büyük ölçüde gold'dan geliyor. Sektöre + rakiplere göre, logodan
+> bağımsız yeni palet seç." Bu, docs/00 §2 "brand constants" kuralını **geçersiz kılar** (sahip onayı).
+> CLAUDE.md / docs/00 hâlâ eski kuralı yazıyor — iki agent da okuduğu için **güncellenmeli** (bkz. §11).
 
-Bunlar doğru ve dokunulmuyor. Sorun hiçbir zaman renk değildi; uygulamaydı.
+**Yeni palet — "Ink & Tide"** (maritime "derin su" tınısı, generic navy değil; EQT/Pareto sınıfı):
+- **Ink (primary)** `#16252B` — derin petrol-charcoal. Koyu bölümler, footer, başlıklar.
+- **Ink-deep** `#0F1B20` — CTA band.
+- **Accent (teal)** `#1C7A6E` (+ hover/on-dark `#41A293`) — gold'un yerine; link, küçük mark, trident, tek buton. Asla zemin.
+- **Zemin:** beyaz `#FFFFFF` hâkim / soğuk kırık-beyaz `#F0F2F1`. Açık↔ink alternatif.
+- **Text** `#222B2E` · **Muted** `#5A6669` · **Line** `#E1E4E3`.
+- **Mark:** trident korunuyor, rengi teal (gold değil).
+
+Mavi blue-hour foto'larla uyumlu; gold'un metalik-lüks klişesi tamamen çıktı.
 
 ---
 
@@ -72,9 +80,10 @@ Kilitli his "sade modern kurumsal" → **sans-dominant** (serif başlık yok). T
 disiplinli ağırlıklarla; "ciddi Nordic kurum" hissi.
 - **AT:** Fraunces, Inter, Spline Sans Mono — ve Space Grotesk/Manrope. **Mono fontu tamamen kaldır.**
 - **ÖNERİ (foto'lu hero üstünde kilitlenecek):**
-  - Tek aile: **Schibsted Grotesk** — başlık + gövde, ağırlıkla ayrışır (Nordic medya grubu için
-    tasarlandı; ciddi-editöryel, AI'da aşırı kullanılmamış). Inter/Space Grotesk değil.
-  - Alternatif (daha nötr/"US-gov ciddi"): **Public Sans**. Daha sıcak isteniyorsa: **Hanken Grotesk**.
+  - **SEÇİLDİ:** tek aile **Hanken Grotesk** — sıcak humanist grotesk; operatör/owner-centric sese
+    uygun, ciddi kalırken AI-klişe değil (Schibsted Grotesk'ten geçildi; müşteri "font'u da sektöre
+    göre ayarla" dedi). Inter/Space Grotesk/Fraunces değil.
+  - Alternatif: Schibsted Grotesk / Public Sans.
 - **Kural:** tek aile; hiyerarşi ağırlık + boyutla (H1 ~clamp 3rem, H2 ~2rem, body 16–18px, line-height 1.6).
   Harf-aralığı fetişi yok (wide-tracking uppercase eyebrow YOK).
 - **Not:** Font, foto girince **5 dakikalık bir swap.** Soyut mockup üstünde font tartışması (önceki
