@@ -497,6 +497,22 @@ p { color: var(--text); }
 .team-list strong { font-size: 1.05rem; color: var(--navy); font-weight: 700; }
 .team-list span { color: var(--muted); font-size: .95rem; }
 
+/* ---------- Them vs. us contrast ---------- */
+.contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2.2rem; max-width: 48rem; }
+.contrast__col { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem 1.5rem 1.6rem; }
+.contrast__col--us { border-left: 3px solid var(--gold); }
+.contrast__col h3 { font-size: 1.05rem; margin-bottom: .9rem; }
+.contrast__col--them h3 { color: var(--muted); }
+.contrast__list { display: grid; gap: .55rem; }
+.contrast__list li { position: relative; padding-left: 1.1rem; font-size: .95rem; color: var(--muted); }
+.contrast__list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 5px; height: 5px; border-radius: 50%; background: var(--line); }
+.contrast__col--us .contrast__list li { color: var(--text); }
+.contrast__col--us .contrast__list li::before { background: var(--gold); }
+@media (max-width: 600px) { .contrast { grid-template-columns: 1fr; } }
+
+/* anchor target offset under the fixed header */
+#how { scroll-margin-top: 5.5rem; }
+
 /* ---------- Reveal animation (progressive enhancement) ---------- */
 html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.21,.6,.35,1), transform .7s cubic-bezier(.21,.6,.35,1); }
 html.js .reveal.is-visible { opacity: 1; transform: none; }

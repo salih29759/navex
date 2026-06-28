@@ -132,4 +132,17 @@
   };
   window.addEventListener("scroll", toggleTop, { passive: true });
   toggleTop();
+
+  /* Smooth in-page anchor scrolling (respects reduced-motion + fixed header) */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var href = a.getAttribute("href");
+      if (!href || href === "#") return;
+      var target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.pageYOffset - 72;
+      window.scrollTo({ top: top, behavior: reduce ? "auto" : "smooth" });
+    });
+  });
 })();
