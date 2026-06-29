@@ -1,0 +1,12 @@
+{
+  "name": "Navex Capital",
+  "short_name": "Navex",
+  "theme_color": "#13293C",
+  "background_color": "#13293C",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

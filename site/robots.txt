@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://navex-zeta.vercel.app/sitemap.xml
