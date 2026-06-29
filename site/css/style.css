@@ -157,10 +157,11 @@ p { color: var(--text); }
 
 .nav-right { display: flex; align-items: center; gap: 1.1rem; }
 .nav-cta { padding: .6rem 1.15rem; font-size: .9rem; }
+.nav-cta-m { display: none; }   /* mobile-menu Talk-to-us CTA; shown only in the open hamburger menu */
 .site-header:not(.is-scrolled) .nav-cta { background: transparent; border-color: rgba(255,255,255,.55); color: var(--white); }
 .site-header:not(.is-scrolled) .nav-cta:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
 
-.nav-toggle { display: none; background: none; border: 0; padding: .4rem; }
+.nav-toggle { display: none; background: none; border: 0; padding: .7rem .5rem; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: currentColor; margin: 5px 0; transition: transform .3s ease, opacity .3s ease; }
 
 /* ---------- Hero (cinematic photo montage - "video-like") ---------- */
@@ -526,7 +527,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .nav-toggle { display: block; }
   .site-header.nav-open { background: var(--white); color: var(--navy); }
   .nav-open .nav-links {
-    display: flex; flex-direction: column; align-items: flex-start; gap: 1.2rem;
+    display: flex; flex-direction: column; align-items: flex-start; gap: .4rem;
     position: absolute; top: 100%; left: 0; right: 0;
     background: var(--white); padding: 1.5rem var(--gutter) 2rem; border-top: 1px solid var(--line);
     box-shadow: 0 10px 24px rgba(19,41,60,.08);
@@ -534,6 +535,9 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .nav-open .nav-toggle span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
   .nav-open .nav-toggle span:nth-child(2){ opacity: 0; }
   .nav-open .nav-toggle span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+  /* mobile menu: bigger tap targets + reachable Talk-to-us CTA */
+  .nav-open .nav-links a:not(.nav-cta-m) { display: block; width: 100%; padding-block: .8rem; opacity: 1; }
+  .nav-open .nav-links .nav-cta-m { display: inline-flex; margin-top: .6rem; opacity: 1; }
 
   .wedge__grid, .proof__grid { grid-template-columns: 1fr; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
