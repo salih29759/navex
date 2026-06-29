@@ -583,6 +583,11 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .newsletter__form { flex-direction: column; }
 }
 
+@media (max-width: 480px) {
+  /* primary CTA rows: full-width, cleanly stacked (no cramped side-by-side) */
+  .hero .btn-row .btn, .cta-band .btn-row .btn { width: 100%; justify-content: center; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
