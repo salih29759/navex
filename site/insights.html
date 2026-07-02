@@ -130,10 +130,13 @@
             <h2>Maritime PE insight, a few times a year</h2>
             <p class="lead">Occasional, substantive notes for investors and operators. No noise.</p>
           </div>
-          <!-- Temporary mailto fallback until a newsletter backend is wired. -->
-          <form class="newsletter__form reveal" action="mailto:info@navexcapital.com" method="post" enctype="text/plain">
+          <!-- Signups are emailed to info@navexcapital.com via FormSubmit.co; swap the action for a real ESP (e.g. Mailchimp/Buttondown) later if volume grows. -->
+          <form class="newsletter__form reveal" action="https://formsubmit.co/ajax/info@navexcapital.com" method="POST" data-ajax data-event="newsletter_submit" data-success="Thank you, you are on the list.">
+            <input type="hidden" name="_subject" value="Newsletter signup via navexcapital.com" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <input type="email" name="email" placeholder="Your email" aria-label="Your email" required />
             <button class="btn btn--primary" type="submit">Subscribe</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>

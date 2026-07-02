@@ -133,6 +133,43 @@
   window.addEventListener("scroll", toggleTop, { passive: true });
   toggleTop();
 
+  /* Analytics event helper (Vercel Web Analytics); degrades silently if not loaded */
+  var track = function (name) {
+    try { if (window.va) window.va("event", { name: name }); } catch (e) {}
+  };
+
+  /* AJAX forms (FormSubmit.co): no page reload, visible success/error, button disabled while sending */
+  document.querySelectorAll("form[data-ajax]").forEach(function (f) {
+    var status = f.querySelector(".form-status");
+    var btn = f.querySelector('button[type="submit"]');
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (btn) btn.disabled = true;
+      if (status) { status.textContent = "Sending…"; status.className = "form-status"; }
+      fetch(f.action, {
+        method: "POST",
+        body: new FormData(f),
+        headers: { "Accept": "application/json" }
+      })
+        .then(function (r) { if (!r.ok) throw new Error("bad status"); return r.json(); })
+        .then(function () {
+          if (status) {
+            status.textContent = f.getAttribute("data-success") || "Thank you. Your message has been sent.";
+            status.classList.add("is-success");
+          }
+          f.reset();
+          track(f.getAttribute("data-event") || "form_submit");
+        })
+        .catch(function () {
+          if (status) {
+            status.textContent = "Something went wrong. Please email us directly at info@navexcapital.com.";
+            status.classList.add("is-error");
+          }
+        })
+        .finally(function () { if (btn) btn.disabled = false; });
+    });
+  });
+
   /* Smooth in-page anchor scrolling (respects reduced-motion + fixed header) */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {

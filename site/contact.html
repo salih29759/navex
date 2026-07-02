@@ -85,8 +85,11 @@
     <section class="section section--light">
       <div class="container">
         <div class="contact-grid">
-          <!-- Temporary mailto fallback until a form backend (Formspree / serverless) is wired. -->
-          <form class="form reveal" action="mailto:info@navexcapital.com" method="post" enctype="text/plain">
+          <!-- FormSubmit.co delivers submissions to info@navexcapital.com (first submission triggers a one-time activation email to that mailbox). To switch to Formspree later: replace the action with your https://formspree.io/f/ID endpoint. -->
+          <form class="form reveal" action="https://formsubmit.co/ajax/info@navexcapital.com" method="POST" data-ajax data-event="contact_submit" data-success="Thank you. Your message is on its way; we usually reply within one business day.">
+            <input type="hidden" name="_subject" value="New enquiry via navexcapital.com" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form__row">
               <div class="field">
                 <label for="name">Name</label>
@@ -112,6 +115,7 @@
               <textarea id="message" name="message" required></textarea>
             </div>
             <button class="btn btn--primary" type="submit">Send message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
 
           <aside class="contact-aside reveal">
