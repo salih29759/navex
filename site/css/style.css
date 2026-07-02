@@ -608,3 +608,38 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .hero__video { display: none !important; }
   .hero__media { background: url('../assets/hero-loop-poster.jpg') center/cover !important; }
 }
+
+/* ---------- Cookie banner theming (self-hosted vanilla-cookieconsent v3) ----------
+   Branded via the library's own CSS variables; site tokens only. Remove with the consent layer. */
+#cc-main {
+  --cc-font-family: var(--f-sans);
+  --cc-bg: var(--white);
+  --cc-primary-color: var(--navy);
+  --cc-secondary-color: var(--muted);
+  --cc-link-color: var(--gold);
+  --cc-modal-border-radius: 6px;
+  --cc-btn-border-radius: 4px;
+  --cc-btn-primary-bg: var(--navy);
+  --cc-btn-primary-border-color: var(--navy);
+  --cc-btn-primary-color: var(--white);
+  --cc-btn-primary-hover-bg: var(--navy-deep);
+  --cc-btn-primary-hover-border-color: var(--navy-deep);
+  --cc-btn-secondary-bg: var(--white);
+  --cc-btn-secondary-color: var(--navy);
+  --cc-btn-secondary-border-color: var(--line);
+  --cc-btn-secondary-hover-bg: var(--bg-light);
+  --cc-btn-secondary-hover-border-color: var(--navy);
+  --cc-btn-secondary-hover-color: var(--navy);
+  --cc-toggle-on-bg: var(--gold);
+  --cc-toggle-off-bg: var(--muted);
+  --cc-toggle-readonly-bg: var(--line);
+  --cc-separator-border-color: var(--line);
+  --cc-footer-bg: var(--bg-light);
+  --cc-footer-border-color: var(--line);
+  --cc-footer-color: var(--muted);
+  --cc-cookie-category-block-bg: var(--bg-light);
+  --cc-cookie-category-block-border: var(--line);
+  --cc-cookie-category-block-hover-bg: var(--bg-light);
+  --cc-cookie-category-block-hover-border: var(--line);
+  --cc-overlay-bg: rgba(19, 41, 60, 0.55);
+}

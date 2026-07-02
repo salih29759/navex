@@ -14,25 +14,28 @@ my $NOINDEX = 0;                                  # live / indexable
 my $SITE = "/Users/salihdurmus/Desktop/navex-build/site";
 my $OGALT = "Navex Capital, operator-led maritime, transport and logistics advisory";
 
-# ---- CONSENT LAYER (CookieYes). Kept as the FIRST script in <head>; official tag used
-# ---- verbatim (synchronous by design so the banner/gate is ready before anything else).
-# ---- Remove this heredoc (and the gated trackers below) to remove the whole stack.
+# ---- CONSENT LAYER: self-hosted vanilla-cookieconsent v3 (orestbida/cookieconsent).
+# ---- Files: site/vendor/cookieconsent.{css,umd.js} + site/js/consent-init.js (config).
+# ---- Deferred, so nothing render-blocks; gated trackers below stay inert until consent.
+# ---- Remove this heredoc + those three files to remove the whole consent layer.
 my $CONSENT_LOADER = <<'EOT';
-  <!-- Start cookieyes banner (consent layer; must stay the FIRST script in <head>) -->
-  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/e100fffb3d7c47f7a80d50e8d5fb3951/script.js"></script>
-  <!-- End cookieyes banner -->
+  <!-- Consent management (self-hosted vanilla-cookieconsent v3; no external CDN) -->
+  <link rel="stylesheet" href="/vendor/cookieconsent.css" />
+  <script defer src="/vendor/cookieconsent.umd.js"></script>
+  <script defer src="/js/consent-init.js"></script>
+  <!-- End consent management -->
 EOT
 
 # ---- CONSENT-GATED TRACKERS. type="text/plain" keeps each script inert (never fetched,
-# ---- never executed) until CookieYes activates its data-cookieyes category on consent.
-# ---- Each block is independently removable.
+# ---- never executed) until vanilla-cookieconsent enables its data-category on consent
+# ---- (auto re-execution, no page reload). Each block is independently removable.
 my $GATED_TRACKERS = <<'EOT';
   <!-- Microsoft Clarity (heatmaps / session replay, input masked) - runs only after ANALYTICS consent. Remove this block to drop Clarity. -->
-  <script type="text/plain" data-cookieyes="cookieyes-analytics">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xfzt0ookk0");</script>
-  <!-- Leadfeeder (company-level visitor identification incl. form submissions) - runs only after ANALYTICS consent (category per Leadfeeder's GDPR guidance). Remove this block to drop Leadfeeder. -->
-  <script type="text/plain" data-cookieyes="cookieyes-analytics">(function(ss,ex){window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));};(function(d,s){fs=d.getElementsByTagName(s)[0];function ce(src){var cs=d.createElement(s);cs.src=src;cs.async=1;fs.parentNode.insertBefore(cs,fs);};ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');})(document,'script');})('YEgkB8lbgvz4ep3Z');</script>
-  <!-- RB2B (visitor identification) - runs only after MARKETING (advertisement) consent, per RB2B's CookieYes guidance + explicit blocking so nothing loads pre-consent. Remove this block to drop RB2B. -->
-  <script type="text/plain" data-cookieyes="cookieyes-advertisement">!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s,document.getElementsByTagName("script")[0]);}("1N5W0H73VRO5");</script>
+  <script type="text/plain" data-category="analytics">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xfzt0ookk0");</script>
+  <!-- Leadfeeder (company-level visitor identification incl. form submissions) - runs only after ANALYTICS consent (category per Leadfeeder's GDPR guidance); full blocking by decision, no pre-consent load. Remove this block to drop Leadfeeder. -->
+  <script type="text/plain" data-category="analytics">(function(ss,ex){window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));};(function(d,s){fs=d.getElementsByTagName(s)[0];function ce(src){var cs=d.createElement(s);cs.src=src;cs.async=1;fs.parentNode.insertBefore(cs,fs);};ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js');})(document,'script');})('YEgkB8lbgvz4ep3Z');</script>
+  <!-- RB2B (visitor identification) - runs only after MARKETING consent; explicit blocking so nothing loads pre-consent. Remove this block to drop RB2B. -->
+  <script type="text/plain" data-category="marketing">!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s,document.getElementsByTagName("script")[0]);}("1N5W0H73VRO5");</script>
 EOT
 
 # page file => canonical path
