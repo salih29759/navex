@@ -3,3 +3,7 @@ node_modules/
 *.log
 .vscode/
 preview_*.png
+
+# raw source photos (optimized copies live in site/assets/)
+harund..webp
+*.webp
