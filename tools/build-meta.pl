@@ -8,8 +8,8 @@ use strict; use warnings;
 #  Every absolute og:url / og:image / twitter:image / canonical / sitemap / manifest
 #  URL on the whole site is regenerated from $BASE. Nothing else to touch.
 # ============================================================================
-my $BASE    = 'https://navex-zeta.vercel.app';   # <-- THE ONE LINE (current live origin so previews work TODAY)
-my $NOINDEX = 1;                                  # 1 = staging (noindex); set 0 at launch
+my $BASE    = 'https://www.navexcapital.com';    # <-- THE ONE LINE. Always the www host: the apex 308-redirects to www.
+my $NOINDEX = 0;                                  # live / indexable
 
 my $SITE = "/Users/salihdurmus/Desktop/navex-build/site";
 my $OGALT = "Navex Capital, operator-led maritime, transport and logistics advisory";
@@ -23,6 +23,7 @@ my @pages = (
   ["about.html","/about.html"],
   ["insights.html","/insights.html"],
   ["contact.html","/contact.html"],
+  ["insight-operational-dd.html","/insight-operational-dd.html"],
   ["privacy.html","/privacy.html"],
   ["terms.html","/terms.html"],
   ["404.html","/404.html"],
@@ -76,7 +77,18 @@ for my $p (@pages) {
     . "  <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon.png\" />\n"
     . "  <link rel=\"manifest\" href=\"/site.webmanifest\" />\n"
     . "  <meta name=\"theme-color\" content=\"#13293C\" />\n"
-    . "  <!-- META:END -->\n";
+    . "  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n"
+    . "  <script defer src=\"/_vercel/insights/script.js\"></script>\n"
+    . "  <script defer src=\"/_vercel/speed-insights/script.js\"></script>\n"
+    . "  <!-- Microsoft Clarity (heatmaps) - OPTIONAL and the only cookie-setting item on the site.\n"
+    . "       To enable: replace CLARITY_ID with your project id and remove the surrounding comment markers.\n"
+    . "  <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, \"clarity\", \"script\", \"CLARITY_ID\");</script>\n"
+    . "  -->\n";
+
+  if ($file eq 'index.html') {
+    $block .= "  <script type=\"application/ld+json\">{\"\@context\":\"https://schema.org\",\"\@type\":\"Organization\",\"name\":\"Navex Capital\",\"url\":\"$BASE/\",\"logo\":\"$BASE/assets/apple-touch-icon.png\",\"description\":\"Operator-led maritime, transport and logistics advisory for private equity firms and business owners.\",\"email\":\"info\@navexcapital.com\",\"telephone\":\"+1-786-717-2128\",\"address\":{\"\@type\":\"PostalAddress\",\"streetAddress\":\"2645 Edgewater Drive\",\"addressLocality\":\"Weston\",\"addressRegion\":\"FL\",\"postalCode\":\"33332\",\"addressCountry\":\"US\"},\"sameAs\":[\"https://www.linkedin.com/company/navexcapital\"]}</script>\n";
+  }
+  $block .= "  <!-- META:END -->\n";
 
   # insert right after the description meta line
   $c =~ s/(<meta name="description" content="[^"]*"\s*\/?>\n)/$1$block/;
