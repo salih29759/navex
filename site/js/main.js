@@ -170,6 +170,18 @@
     });
   });
 
+  /* Conversion click tracking (degrades silently if analytics is absent) */
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest("a") : null;
+    if (!a) return;
+    var h = a.getAttribute("href") || "";
+    if (h.indexOf("tel:") === 0) track("click_phone");
+    else if (h.indexOf("mailto:") === 0) track("click_email");
+    else if (h.indexOf("linkedin.com") !== -1) track("click_linkedin");
+    else if (h.indexOf("contact.html") !== -1) track("cta_contact");
+    else if (h.indexOf("case-studies.html") !== -1) track("view_case_studies");
+  });
+
   /* Smooth in-page anchor scrolling (respects reduced-motion + fixed header) */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
