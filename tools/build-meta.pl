@@ -99,6 +99,8 @@ for my $p (@pages) {
     . "  <meta name=\"twitter:image:alt\" content=\"$OGALT\" />\n"
     . "  <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\" />\n"
     . "  <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\" />\n"
+    . "  <link rel=\"icon\" href=\"/favicon-32x32.png\" type=\"image/png\" sizes=\"32x32\" />\n"
+    . "  <link rel=\"icon\" href=\"/favicon-16x16.png\" type=\"image/png\" sizes=\"16x16\" />\n"
     . "  <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon.png\" />\n"
     . "  <link rel=\"manifest\" href=\"/site.webmanifest\" />\n"
     . "  <meta name=\"theme-color\" content=\"#13293C\" />\n"
@@ -108,7 +110,7 @@ for my $p (@pages) {
     . $GATED_TRACKERS;
 
   if ($file eq 'index.html') {
-    $block .= "  <script type=\"application/ld+json\">{\"\@context\":\"https://schema.org\",\"\@type\":\"Organization\",\"name\":\"Navex Capital\",\"url\":\"$BASE/\",\"logo\":\"$BASE/assets/apple-touch-icon.png\",\"description\":\"Operator-led maritime, transport and logistics advisory for private equity firms and business owners.\",\"email\":\"info\@navexcapital.com\",\"telephone\":\"+1-786-717-2128\",\"address\":{\"\@type\":\"PostalAddress\",\"streetAddress\":\"2645 Edgewater Drive\",\"addressLocality\":\"Weston\",\"addressRegion\":\"FL\",\"postalCode\":\"33332\",\"addressCountry\":\"US\"},\"sameAs\":[\"https://www.linkedin.com/company/navexcapital\"]}</script>\n";
+    $block .= "  <script type=\"application/ld+json\">{\"\@context\":\"https://schema.org\",\"\@type\":\"Organization\",\"name\":\"Navex Capital\",\"url\":\"$BASE/\",\"logo\":\"$BASE/assets/apple-touch-icon.png\",\"description\":\"Operator-led maritime, transport and logistics advisory for private equity firms and business owners.\",\"email\":\"info\@navexcapital.com\",\"telephone\":\"+1-786-717-2128\",\"address\":{\"\@type\":\"PostalAddress\",\"addressLocality\":\"Weston\",\"addressRegion\":\"FL\",\"addressCountry\":\"US\"},\"sameAs\":[\"https://www.linkedin.com/company/navexcapital\"]}</script>\n";
   }
   $block .= "  <!-- META:END -->\n";
 
