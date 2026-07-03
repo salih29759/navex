@@ -2,5 +2,10 @@
   "buildCommand": "true",
   "outputDirectory": "site",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/home-1-1", "destination": "/services", "statusCode": 301 },
+    { "source": "/blog-1-1", "destination": "/insights", "statusCode": 301 },
+    { "source": "/terms-of-service-4", "destination": "/terms", "statusCode": 301 }
+  ]
 }
