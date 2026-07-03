@@ -42,6 +42,11 @@ EOT
 my @pages = (
   ["index.html","/"],
   ["services.html","/services.html"],
+  ["service-due-diligence.html","/service-due-diligence.html"],
+  ["service-value-creation.html","/service-value-creation.html"],
+  ["for-private-equity.html","/for-private-equity.html"],
+  ["for-owners.html","/for-owners.html"],
+  ["for-lenders.html","/for-lenders.html"],
   ["industries.html","/industries.html"],
   ["case-studies.html","/case-studies.html"],
   ["about.html","/about.html"],

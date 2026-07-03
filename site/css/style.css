@@ -142,18 +142,46 @@ p { color: var(--text); }
 .brand svg path { stroke: var(--gold); stroke-width: 2.4; }
 .brand svg circle { fill: var(--gold); }
 
-.nav-links { display: flex; align-items: center; gap: 1.6rem; }
-.nav-links a {
+.nav-links { display: flex; align-items: center; gap: 1.3rem; }
+.nav-links > a {
   font-size: .95rem; font-weight: 500; color: inherit; opacity: .82;
   position: relative; padding-block: .3rem; transition: opacity .2s ease;
 }
-.nav-links a::after {
+.nav-links > a::after {
   content: ""; position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--gold);
   transition: width .25s ease;
 }
-.nav-links a:hover { opacity: 1; }
-.nav-links a:hover::after, .nav-links a.is-active::after { width: 100%; }
-.nav-links a.is-active { opacity: 1; }
+.nav-links > a:hover { opacity: 1; }
+.nav-links > a:hover::after, .nav-links > a.is-active::after { width: 100%; }
+.nav-links > a.is-active { opacity: 1; }
+
+/* ---------- Nav dropdowns (Who We Serve / Services / Industries) ---------- */
+.nav-item { position: relative; display: inline-flex; align-items: center; }
+.nav-parent {
+  display: inline-flex; align-items: center; gap: .34rem;
+  background: none; border: 0; color: inherit; font: inherit;
+  font-size: .95rem; font-weight: 500; opacity: .82; cursor: pointer;
+  padding-block: .3rem; transition: opacity .2s ease;
+}
+.nav-parent:hover, .nav-item:hover .nav-parent, .nav-item:focus-within .nav-parent { opacity: 1; }
+.nav-parent .caret { transition: transform .25s ease; }
+.nav-item:hover .nav-parent .caret,
+.nav-item:focus-within .nav-parent .caret,
+.nav-item.is-open .nav-parent .caret { transform: rotate(180deg); }
+.nav-menu {
+  position: absolute; top: calc(100% + .4rem); left: 0; min-width: 232px;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 14px 34px rgba(19,41,60,.12);
+  padding: .45rem; display: none; z-index: 120;
+}
+.nav-item:hover .nav-menu, .nav-item:focus-within .nav-menu, .nav-item.is-open .nav-menu { display: block; }
+.nav-menu a {
+  display: block; padding: .58rem .7rem; border-radius: 4px;
+  color: var(--navy); font-size: .92rem; font-weight: 500; opacity: 1; white-space: nowrap;
+  transition: background .18s ease;
+}
+.nav-menu a::after { display: none; }
+.nav-menu a:hover { background: var(--bg-light); color: var(--navy); }
 
 .nav-right { display: flex; align-items: center; gap: 1.1rem; }
 .nav-cta { padding: .6rem 1.15rem; font-size: .9rem; }
@@ -255,6 +283,7 @@ p { color: var(--text); }
 .serve-col:last-child { margin-right: 0; }
 .serve-col h3 { margin: 0 0 .5rem; font-size: 1.18rem; }
 .serve-col p { font-size: .96rem; color: var(--muted); }
+.serve-col .arrow-link { margin-top: 1rem; }
 
 /* ---------- CTA band ---------- */
 .cta-band { background: var(--navy-deep); color: var(--white); text-align: left; padding-block: clamp(3.5rem, 7vw, 5.5rem); }
@@ -523,7 +552,35 @@ p { color: var(--text); }
 @media (max-width: 600px) { .contrast { grid-template-columns: 1fr; } }
 
 /* anchor target offset under the fixed header */
-#how { scroll-margin-top: 5.5rem; }
+#how, .industry-row[id], .svc[id] { scroll-margin-top: 5.5rem; }
+
+/* ---------- Audience + service detail pages ---------- */
+/* deliverable / examine tick list */
+.ticklist { display: grid; gap: .7rem; margin-top: 1.6rem; max-width: 62ch; }
+.ticklist li { position: relative; padding-left: 1.7rem; color: var(--muted); }
+.ticklist li::before {
+  content: ""; position: absolute; left: .2rem; top: .28em;
+  width: .42rem; height: .78rem; border: solid var(--gold); border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.section--dark .ticklist li { color: var(--on-dark); }
+/* two-column prose split for problem / how-we-help intros */
+.prose-narrow { max-width: 62ch; }
+.prose-narrow p + p { margin-top: 1rem; }
+/* download + CTA button row spacing on content pages */
+.page-actions { margin-top: 2.2rem; }
+/* service detail: "what we examine" columns */
+.examine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem 3rem; margin-top: 2.6rem; }
+.examine-grid h3 { font-size: 1.18rem; margin-bottom: .2rem; }
+.examine-grid .ticklist { margin-top: .9rem; }
+/* interest select matches text inputs */
+.field select {
+  font: inherit; color: var(--text); background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: .8rem .9rem; width: 100%;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.field select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(28,126,150,.15); }
 
 /* ---------- Reveal animation (progressive enhancement) ---------- */
 html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.21,.6,.35,1), transform .7s cubic-bezier(.21,.6,.35,1); }
@@ -549,6 +606,15 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   /* mobile menu: bigger tap targets + reachable Talk-to-us CTA */
   .nav-open .nav-links a:not(.nav-cta-m) { display: block; width: 100%; padding-block: .8rem; opacity: 1; }
   .nav-open .nav-links .nav-cta-m { display: inline-flex; margin-top: .6rem; opacity: 1; }
+  /* mobile dropdowns: full-width rows, tap-to-expand accordions */
+  .nav-open .nav-item { width: 100%; flex-direction: column; align-items: stretch; }
+  .nav-open .nav-parent { width: 100%; justify-content: space-between; padding-block: .8rem; font-size: 1rem; }
+  .nav-open .nav-menu {
+    position: static; display: none; min-width: 0;
+    border: 0; box-shadow: none; padding: 0 0 .4rem .9rem;
+  }
+  .nav-open .nav-item.is-open .nav-menu { display: block; }
+  .nav-open .nav-menu a { white-space: normal; padding: .6rem .2rem; }
 
   .wedge__grid, .proof__grid { grid-template-columns: 1fr; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
@@ -568,6 +634,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .form__row { grid-template-columns: 1fr; }
   .case-grid { grid-template-columns: 1fr 1fr; }
   .head-split { grid-template-columns: 1fr; align-items: start; gap: 1rem; }
+  .examine-grid { grid-template-columns: 1fr; gap: 2rem; }
   .lc-track { grid-template-columns: 1fr 1fr; }
   .lc-track::before { display: none; }
   .points-3 { grid-template-columns: 1fr 1fr; }

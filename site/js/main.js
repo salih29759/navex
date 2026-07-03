@@ -32,6 +32,26 @@
     });
   }
 
+  /* Nav dropdowns: desktop uses CSS hover/focus; mobile taps to expand */
+  var navMq = window.matchMedia("(max-width: 940px)");
+  document.querySelectorAll(".nav-parent").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      if (!navMq.matches) return; /* desktop: hover handles it */
+      e.preventDefault();
+      var item = btn.closest(".nav-item");
+      var open = item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  /* Contact form: pre-select the "reaching out as" option from ?interest= */
+  var interestSel = document.getElementById("interest");
+  if (interestSel) {
+    var map = { pe: "Private equity", owner: "Business owner / founder", lender: "Lender / credit fund" };
+    var q = new URLSearchParams(window.location.search).get("interest");
+    if (q && map[q]) interestSel.value = map[q];
+  }
+
   /* Scroll reveal with subtle stagger within sibling groups */
   var items = document.querySelectorAll(".reveal");
   if (!reduce) {

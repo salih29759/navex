@@ -66,12 +66,39 @@
       </a>
 
       <nav class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="services.html" class="is-active">Services</a>
-        <a href="industries.html">Industries</a>
+        <div class="nav-item has-menu">
+          <button type="button" class="nav-parent" aria-haspopup="true" aria-expanded="false">Who We Serve <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-menu">
+            <a href="for-private-equity.html">Private Equity</a>
+            <a href="for-owners.html">Business Owners &amp; Founders</a>
+            <a href="for-lenders.html">Lenders &amp; Credit Funds</a>
+          </div>
+        </div>
+        <div class="nav-item has-menu">
+          <button type="button" class="nav-parent" aria-haspopup="true" aria-expanded="false">Services <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-menu">
+            <a href="services.html">All services</a>
+            <a href="service-due-diligence.html">Commercial &amp; Operational Due Diligence</a>
+            <a href="service-value-creation.html">Value Creation &amp; Growth</a>
+            <a href="services.html#board-interim-leadership">Board &amp; Interim Leadership</a>
+            <a href="services.html#strategic-advisory">Strategic Advisory for PE Firms</a>
+            <a href="services.html#investment-readiness">Investment Readiness for Owners</a>
+            <a href="services.html#transformation-management">Transformation Management</a>
+            <a href="services.html#integration-management">Integration Management</a>
+          </div>
+        </div>
+        <div class="nav-item has-menu">
+          <button type="button" class="nav-parent" aria-haspopup="true" aria-expanded="false">Industries <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-menu">
+            <a href="industries.html#maritime-shipping">Maritime &amp; Shipping</a>
+            <a href="industries.html#marine-services">Marine Services</a>
+            <a href="industries.html#port-terminal">Port &amp; Terminal Logistics</a>
+            <a href="industries.html#transport-freight">Transport &amp; Logistics</a>
+          </div>
+        </div>
         <a href="case-studies.html">Case&nbsp;Studies</a>
         <a href="about.html">About</a>
-        <a href="insights.html">Insights</a>
+        <a href="contact.html">Contact</a>
         <a href="contact.html" class="btn btn--primary nav-cta-m">Talk to us</a>
       </nav>
 
@@ -102,35 +129,35 @@
         <div class="head-split reveal">
           <div>
             <span class="label">What we do</span>
-            <h2>Five ways we create value</h2>
+            <h2>Seven ways we create value</h2>
           </div>
-          <p class="head-split__aside">These five mandates span the full lifecycle. We lead with the operational and leadership work, the part most advisors hand to someone else.</p>
+          <p class="head-split__aside">These seven mandates span the full lifecycle. We lead with the operational and leadership work, the part most advisors hand to someone else.</p>
         </div>
 
         <div class="svc-list">
-          <article class="svc reveal">
+          <article class="svc reveal" id="due-diligence">
             <div class="svc__head">
               <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5" stroke-linecap="round"/><path d="M11 8v6M8 11h6" stroke-linecap="round"/></svg>
               <h3>Commercial &amp; Operational Due Diligence</h3>
             </div>
             <div class="svc__body">
               <p>In-depth analysis of growth and cost drivers, risks, and the real sources of competitive advantage. We run margin and pricing audits, benchmark KPIs, and evaluate the management team on leadership strength, execution capacity, and succession.</p>
-              <a href="case-studies.html" class="arrow-link">See how this works in practice</a>
+              <a href="service-due-diligence.html" class="arrow-link">Read the full approach</a>
             </div>
           </article>
 
-          <article class="svc reveal">
+          <article class="svc reveal" id="value-creation">
             <div class="svc__head">
               <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l5-5 4 3 7-8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 7v5h-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <h3>Value Creation &amp; Growth Planning</h3>
             </div>
             <div class="svc__body">
               <p>Organic and inorganic growth roadmaps built on operating-model design and tactical margin improvement. We drive cost optimization and productivity, and support M&amp;A for the bolt-ons and integrations that compound value.</p>
-              <a href="case-studies.html" class="arrow-link">See how this works in practice</a>
+              <a href="service-value-creation.html" class="arrow-link">Read the full approach</a>
             </div>
           </article>
 
-          <article class="svc reveal">
+          <article class="svc reveal" id="board-interim-leadership">
             <div class="svc__head">
               <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="3"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke-linecap="round"/></svg>
               <h3>Board &amp; Interim Leadership</h3>
@@ -141,7 +168,7 @@
             </div>
           </article>
 
-          <article class="svc reveal">
+          <article class="svc reveal" id="strategic-advisory">
             <div class="svc__head">
               <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke-linejoin="round"/></svg>
               <h3>Strategic Advisory for PE Firms</h3>
@@ -152,7 +179,7 @@
             </div>
           </article>
 
-          <article class="svc reveal">
+          <article class="svc reveal" id="investment-readiness">
             <div class="svc__head">
               <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l3 3v15H6z" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h4" stroke-linecap="round"/></svg>
               <h3>Investment Readiness for Owners</h3>
@@ -160,6 +187,30 @@
             <div class="svc__body">
               <p>Commercial, operational, and financial readiness diagnostics that prepare a company for a capital event. We position the business to attract institutional capital, align management with investor expectations, and surface value-creation opportunities before a sale or recapitalization.</p>
               <a href="case-studies.html" class="arrow-link">See how this works in practice</a>
+            </div>
+          </article>
+
+          <article class="svc reveal" id="transformation-management">
+            <div class="svc__head">
+              <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0113-6.2M20 12a8 8 0 01-13 6.2" stroke-linecap="round"/><path d="M17 3v3h-3M7 21v-3h3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3>Transformation Management</h3>
+            </div>
+            <div class="svc__body">
+              <!-- DRAFT: Deniz to revise -->
+              <p>Reshape how a maritime business actually runs: stakeholders, processes, systems, and the operating model, not just the strategy on paper. We manage that change end to end, from stakeholder alignment and new SOPs to the roles and cadence that make it stick. Led by operators who have run transformations inside PE-owned maritime businesses.</p>
+              <a href="contact.html?interest=owner" class="arrow-link">Talk to us about a transformation</a>
+            </div>
+          </article>
+
+          <article class="svc reveal" id="integration-management">
+            <div class="svc__head">
+              <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/><path d="M7 11v3h10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3>Integration Management</h3>
+            </div>
+            <div class="svc__body">
+              <!-- DRAFT: Deniz to revise -->
+              <p>Absorb bolt-on and add-on acquisitions without losing the core business. Most value in a bolt-on is won or lost in the first hundred days after close, so we plan and run the integration across people, systems, customers, and operations, so the deal delivers what the model promised. Operator-led and maritime-specific.</p>
+              <a href="contact.html?interest=pe" class="arrow-link">Talk to us about an integration</a>
             </div>
           </article>
         </div>
