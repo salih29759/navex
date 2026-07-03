@@ -588,6 +588,14 @@ p { color: var(--text); }
 .field select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(28,126,150,.15); }
 /* proof: 4 figure cards */
 .stat-grid--4 { grid-template-columns: repeat(4, 1fr); }
+/* proof block: clean hierarchy (heading+intro -> stats -> detail -> disclaimer) */
+.proof-block .stat-grid { margin-top: 2.4rem; }
+.proof-block .stat { padding: 1.7rem 1.4rem 1.7rem 0; }
+.proof-detail { margin-top: 2.8rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.proof-detail .ticklist { margin: 0; max-width: 68ch; gap: 1rem; }
+.proof-detail .ticklist li { color: var(--text); font-size: .98rem; line-height: 1.6; }
+.section--dark .proof-detail .ticklist li, .section--gray .proof-detail .ticklist li { color: var(--text); }
+.proof-detail .proof-src { margin-top: 1.6rem; }
 /* deliverables: icon cards */
 .deliver-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.2rem; }
 .deliver-card { display: flex; gap: .9rem; padding: 1.25rem 1.4rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
@@ -609,9 +617,9 @@ p { color: var(--text); }
 .gap-card { border: 1px solid var(--line-dark); border-radius: var(--radius); padding: 1.4rem; background: var(--navy-700); }
 .gap-card h3 { font-size: 1.02rem; margin-bottom: .4rem; color: var(--white); }
 .gap-card p { color: var(--on-dark-dim); font-size: .9rem; margin: 0; }
-.gap-mid { margin-top: 1rem; background: var(--white); color: var(--navy); border-radius: var(--radius); padding: 1.3rem 1.5rem; text-align: center; font-size: 1.05rem; }
-.gap-mid strong { color: var(--navy); }
-.gap-mid .accent { color: var(--gold); }
+.gap-mid { margin-top: 1rem; background: var(--navy-deep); color: var(--on-dark); border: 1px solid var(--gold); border-radius: var(--radius); padding: 1.4rem 1.6rem; text-align: center; font-size: 1.08rem; }
+.gap-mid strong { color: var(--white); }
+.gap-mid .accent { color: var(--gold-soft); }
 /* red-flag risk grid */
 .risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.4rem; }
 .risk-card { border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 1.3rem 1.4rem; background: var(--white); }
