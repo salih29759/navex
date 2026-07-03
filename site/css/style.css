@@ -291,6 +291,7 @@ p { color: var(--text); }
 /* ---------- CTA band ---------- */
 .cta-band { background: var(--navy-deep); color: var(--white); text-align: left; padding-block: clamp(3.5rem, 7vw, 5.5rem); }
 .cta-band h2 { color: var(--white); max-width: 22ch; margin: 0; }
+.cta-band .cta-sub { color: var(--on-dark-dim); margin: .6rem 0 0; max-width: 40ch; }
 .cta-band .btn-row { justify-content: flex-start; flex: none; }
 .cta-band .btn--primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 .cta-band .btn--primary:hover { background: var(--gold-soft); border-color: var(--gold-soft); }
@@ -351,6 +352,7 @@ p { color: var(--text); }
 .page-hero__inner { position: relative; z-index: 2; max-width: 44rem; }
 .page-hero .label { color: var(--gold-soft); }
 .page-hero h1 { color: var(--white); margin-bottom: 1.1rem; }
+.page-hero .hero-fact { color: var(--gold-soft); font-weight: 600; font-size: .98rem; margin-top: .9rem; }
 .page-hero p { color: rgba(255,255,255,.84); font-size: var(--lead); max-width: 52ch; }
 
 /* ---------- Service detail rows ---------- */
@@ -597,6 +599,77 @@ p { color: var(--text); }
 .why-card .ic { color: var(--gold); margin-bottom: .9rem; }
 .why-card h3 { font-size: 1.12rem; margin-bottom: .5rem; }
 .why-card p { color: var(--muted); font-size: .95rem; margin: 0; }
+/* deliverable card variants (owners = soft, lenders = clinical) */
+.deliver-card--soft { background: var(--bg-light); border-color: transparent; }
+.deliver-card--clinical { border-radius: 0; border: 1px solid var(--line); border-left: 2px solid var(--navy); }
+
+/* ============ PE page: analytical devices ============ */
+/* three-gaps diagram: gap cards feeding a highlighted Navex band */
+.gap-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.4rem; }
+.gap-card { border: 1px solid var(--line-dark); border-radius: var(--radius); padding: 1.4rem; background: var(--navy-700); }
+.gap-card h3 { font-size: 1.02rem; margin-bottom: .4rem; color: var(--white); }
+.gap-card p { color: var(--on-dark-dim); font-size: .9rem; margin: 0; }
+.gap-mid { margin-top: 1rem; background: var(--white); color: var(--navy); border-radius: var(--radius); padding: 1.3rem 1.5rem; text-align: center; font-size: 1.05rem; }
+.gap-mid strong { color: var(--navy); }
+.gap-mid .accent { color: var(--gold); }
+/* red-flag risk grid */
+.risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.4rem; }
+.risk-card { border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 1.3rem 1.4rem; background: var(--white); }
+.risk-card .ic { color: var(--gold); margin-bottom: .6rem; }
+.risk-card h3 { font-size: 1.0rem; margin-bottom: .35rem; }
+.risk-card p { color: var(--muted); font-size: .9rem; margin: 0; }
+/* advisor lanes */
+.lanes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.4rem; }
+.lane { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; background: var(--white); }
+.lane h3 { font-size: 1.02rem; margin-bottom: .3rem; }
+.lane p { color: var(--muted); font-size: .9rem; margin: 0; }
+.lane--navex { border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+.lane--navex h3 { color: var(--navy); }
+/* PE timeline duration marker */
+.timeline-note { display: inline-block; margin-top: 1.6rem; padding: .5rem 1rem; border: 1px solid var(--line-dark); border-radius: 999px; color: var(--on-dark); font-size: .9rem; font-weight: 600; }
+
+/* ============ Owners page: human devices ============ */
+/* three choosable journey paths */
+.paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.6rem; }
+.path-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.8rem 1.6rem; background: var(--white); display: flex; flex-direction: column; gap: .55rem; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.path-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(19,41,60,.08); }
+.path-card .ic { color: var(--gold); }
+.path-card h3 { font-size: 1.22rem; }
+.path-card p { color: var(--muted); font-size: .95rem; flex: 1; margin: 0; }
+.path-card .arrow-link { margin-top: .3rem; }
+/* warm vertical journey (process) */
+.journey { margin-top: 2.2rem; max-width: 46rem; }
+.journey-step { position: relative; padding-left: 2.2rem; padding-bottom: 1.8rem; border-left: 2px solid var(--line); }
+.journey-step:last-child { border-left-color: transparent; padding-bottom: 0; }
+.journey-step::before { content: ""; position: absolute; left: -8px; top: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--white); border: 2px solid var(--gold); }
+.journey-step h3 { font-size: 1.08rem; margin-bottom: .3rem; }
+.journey-step p { color: var(--muted); font-size: .95rem; margin: 0; }
+/* reassurance grid */
+.reassure { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2.6rem; margin-top: 2.4rem; }
+.reassure-item { display: flex; gap: .9rem; }
+.reassure-item .ic { color: var(--gold); flex: none; margin-top: .15rem; }
+.reassure-item h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+.reassure-item p { color: var(--muted); font-size: .95rem; margin: 0; }
+
+/* ============ Lenders page: clinical devices ============ */
+/* decision scenarios */
+.scenarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.4rem; }
+.scenario { border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: var(--radius); padding: 1.5rem 1.4rem; background: var(--white); }
+.scenario h3 { font-size: 1.12rem; margin-bottom: .5rem; }
+.scenario .scenario-when { color: var(--gold); font-size: .82rem; font-weight: 600; margin-bottom: .55rem; }
+.scenario p { color: var(--muted); font-size: .92rem; margin: 0; }
+/* independence callout */
+.callout { background: var(--navy); color: var(--on-dark); border: 1px solid var(--line-dark); border-radius: var(--radius); padding: 2rem 2.2rem; margin-top: 2rem; }
+.callout h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 1rem; }
+.callout ul { display: grid; gap: .75rem; }
+.callout li { position: relative; padding-left: 1.5rem; color: var(--on-dark); }
+.callout li::before { content: ""; position: absolute; left: 0; top: .5em; width: .5rem; height: .5rem; background: var(--gold); }
+/* spare stepped process */
+.steps-spare { margin-top: 2.2rem; max-width: 56rem; border-top: 1px solid var(--line); }
+.steps-spare li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.steps-spare .n { color: var(--gold); font-weight: 700; font-variant-numeric: tabular-nums; }
+.steps-spare h3 { font-size: 1.05rem; margin-bottom: .2rem; }
+.steps-spare p { color: var(--muted); font-size: .93rem; margin: 0; }
 
 /* ---------- Reveal animation (progressive enhancement) ---------- */
 html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.21,.6,.35,1), transform .7s cubic-bezier(.21,.6,.35,1); }
@@ -653,6 +726,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .examine-grid { grid-template-columns: 1fr; gap: 2rem; }
   .why-grid { grid-template-columns: 1fr; }
   .deliver-grid { grid-template-columns: 1fr 1fr; }
+  .gap-row, .risk-grid, .lanes, .paths, .scenarios { grid-template-columns: 1fr; }
+  .reassure { grid-template-columns: 1fr; }
   .lc-track { grid-template-columns: 1fr 1fr; }
   .lc-track::before { display: none; }
   .points-3 { grid-template-columns: 1fr 1fr; }
