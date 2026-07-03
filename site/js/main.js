@@ -32,7 +32,7 @@
     });
   }
 
-  /* Nav dropdowns: desktop uses CSS hover/focus; mobile taps to expand */
+  /* Nav dropdowns: desktop hover with a close-delay (forgiving); mobile taps to expand */
   var navMq = window.matchMedia("(max-width: 940px)");
   document.querySelectorAll(".nav-parent").forEach(function (btn) {
     btn.addEventListener("click", function (e) {
@@ -41,6 +41,22 @@
       var item = btn.closest(".nav-item");
       var open = item.classList.toggle("is-open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+  /* hover-intent: keep the panel open ~250ms after the mouse leaves, so moving from
+     the label down into the items never snaps it shut */
+  document.querySelectorAll(".nav-item.has-menu").forEach(function (item) {
+    var timer = null;
+    var parent = item.querySelector(".nav-parent");
+    var setExpanded = function (v) { if (parent) parent.setAttribute("aria-expanded", v ? "true" : "false"); };
+    item.addEventListener("mouseenter", function () {
+      if (navMq.matches) return;
+      if (timer) { clearTimeout(timer); timer = null; }
+      item.classList.add("is-open"); setExpanded(true);
+    });
+    item.addEventListener("mouseleave", function () {
+      if (navMq.matches) return;
+      timer = setTimeout(function () { item.classList.remove("is-open"); setExpanded(false); }, 250);
     });
   });
 
@@ -198,8 +214,8 @@
     if (h.indexOf("tel:") === 0) track("click_phone");
     else if (h.indexOf("mailto:") === 0) track("click_email");
     else if (h.indexOf("linkedin.com") !== -1) track("click_linkedin");
-    else if (h.indexOf("contact.html") !== -1) track("cta_contact");
-    else if (h.indexOf("case-studies.html") !== -1) track("view_case_studies");
+    else if (h.indexOf("/contact") !== -1 || h.indexOf("contact.html") !== -1) track("cta_contact");
+    else if (h.indexOf("/case-studies") !== -1 || h.indexOf("case-studies.html") !== -1) track("view_case_studies");
   });
 
   /* Smooth in-page anchor scrolling (respects reduced-motion + fixed header) */

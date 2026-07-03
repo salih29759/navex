@@ -11,13 +11,13 @@
   <script defer src="/vendor/cookieconsent.umd.js"></script>
   <script defer src="/js/consent-init.js"></script>
   <!-- End consent management -->
-  <link rel="canonical" href="https://www.navexcapital.com/service-due-diligence.html" />
+  <link rel="canonical" href="https://www.navexcapital.com/service-due-diligence" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Navex Capital" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Commercial &amp; Operational Due Diligence | Navex Capital" />
   <meta property="og:description" content="Operator-led commercial and operational due diligence for maritime, transport, and logistics. We complement Big Four financial DD with the operational read they can't give you." />
-  <meta property="og:url" content="https://www.navexcapital.com/service-due-diligence.html" />
+  <meta property="og:url" content="https://www.navexcapital.com/service-due-diligence" />
   <meta property="og:image" content="https://www.navexcapital.com/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -54,7 +54,7 @@
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="header">
     <div class="container nav">
-      <a href="index.html" class="brand" aria-label="Navex Capital home">
+      <a href="/" class="brand" aria-label="Navex Capital home">
         <svg viewBox="0 0 40 48" fill="none" aria-hidden="true">
           <path d="M20 6v38" stroke="#1C7E96" stroke-width="2.4"/>
           <path d="M8 14c0 7 5 11 12 11s12-4 12-11" stroke="#1C7E96" stroke-width="2.4"/>
@@ -69,41 +69,21 @@
         <div class="nav-item has-menu">
           <button type="button" class="nav-parent" aria-haspopup="true" aria-expanded="false">Who We Serve <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav-menu">
-            <a href="for-private-equity.html">Private Equity</a>
-            <a href="for-owners.html">Business Owners &amp; Founders</a>
-            <a href="for-lenders.html">Lenders &amp; Credit Funds</a>
+            <a href="/for-private-equity">Private Equity</a>
+            <a href="/for-owners">Business Owners &amp; Founders</a>
+            <a href="/for-lenders">Lenders &amp; Credit Funds</a>
           </div>
         </div>
-        <div class="nav-item has-menu">
-          <button type="button" class="nav-parent" aria-haspopup="true" aria-expanded="false">Services <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-menu">
-            <a href="services.html">All services</a>
-            <a href="service-due-diligence.html">Commercial &amp; Operational Due Diligence</a>
-            <a href="service-value-creation.html">Value Creation &amp; Growth</a>
-            <a href="services.html#board-interim-leadership">Board &amp; Interim Leadership</a>
-            <a href="services.html#strategic-advisory">Strategic Advisory for PE Firms</a>
-            <a href="services.html#investment-readiness">Investment Readiness for Owners</a>
-            <a href="services.html#transformation-management">Transformation Management</a>
-            <a href="services.html#integration-management">Integration Management</a>
-          </div>
-        </div>
-        <div class="nav-item has-menu">
-          <button type="button" class="nav-parent" aria-haspopup="true" aria-expanded="false">Industries <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-menu">
-            <a href="industries.html#maritime-shipping">Maritime &amp; Shipping</a>
-            <a href="industries.html#marine-services">Marine Services</a>
-            <a href="industries.html#port-terminal">Port &amp; Terminal Logistics</a>
-            <a href="industries.html#transport-freight">Transport &amp; Logistics</a>
-          </div>
-        </div>
-        <a href="case-studies.html">Case&nbsp;Studies</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn btn--primary nav-cta-m">Talk to us</a>
+        <a href="/services">Services</a>
+        <a href="/industries">Industries</a>
+        <a href="/case-studies">Case&nbsp;Studies</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/contact" class="btn btn--primary nav-cta-m">Talk to us</a>
       </nav>
 
       <div class="nav-right">
-        <a href="contact.html" class="btn btn--primary nav-cta">Talk to us</a>
+        <a href="/contact" class="btn btn--primary nav-cta">Talk to us</a>
         <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -123,7 +103,7 @@
       </div>
     </section>
 
-    <section class="section section--light">
+    <section class="section section--gray">
       <div class="container">
         <div class="section-head reveal">
           <span class="label">What we examine</span>
@@ -132,60 +112,72 @@
         <div class="examine-grid">
           <div class="reveal">
             <h3>Commercial</h3>
-        <ul class="ticklist reveal">
-          <li>Revenue quality</li>
-          <li>Customer concentration</li>
-          <li>Contract portfolio</li>
-          <li>Pricing power</li>
-          <li>Demand drivers</li>
-        </ul>
+            <ul class="ticklist">
+            <li>Revenue quality</li>
+            <li>Customer concentration</li>
+            <li>Contract portfolio</li>
+            <li>Pricing power</li>
+            <li>Demand drivers</li>
+            </ul>
           </div>
 
           <div class="reveal">
             <h3>Operational</h3>
-        <ul class="ticklist reveal">
-          <li>Utilization</li>
-          <li>Maintenance and drydock</li>
-          <li>HSE and compliance</li>
-          <li>Crewing</li>
-          <li>Technical management</li>
-        </ul>
+            <ul class="ticklist">
+            <li>Utilization</li>
+            <li>Maintenance and drydock</li>
+            <li>HSE and compliance</li>
+            <li>Crewing</li>
+            <li>Technical management</li>
+            </ul>
           </div>
 
           <div class="reveal">
             <h3>Fleet and asset</h3>
-        <ul class="ticklist reveal">
-          <li>Condition</li>
-          <li>Class status</li>
-          <li>Valuation cross-check</li>
-          <li>Capex obligations</li>
-        </ul>
+            <ul class="ticklist">
+            <li>Condition</li>
+            <li>Class status</li>
+            <li>Valuation cross-check</li>
+            <li>Capex obligations</li>
+            </ul>
           </div>
 
           <div class="reveal">
             <h3>Organization</h3>
-        <ul class="ticklist reveal">
-          <li>Key-person risk</li>
-          <li>Management depth</li>
-          <li>Succession</li>
-        </ul>
+            <ul class="ticklist">
+            <li>Key-person risk</li>
+            <li>Management depth</li>
+            <li>Succession</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--gray">
+    <section class="section section--light">
       <div class="container">
         <div class="section-head reveal">
           <span class="label">What you get</span>
-          <h2>Deliverables</h2>
+          <h2>Deliverables, not a deck of theory</h2>
         </div>
-        <ul class="ticklist reveal">
-          <li>A 15 to 25 page report.</li>
-          <li>A one-page red-flag summary for the IC.</li>
-          <li>A 100-day value-creation lever list.</li>
-          <li>An IC debrief call.</li>
-        </ul>
+        <div class="deliver-grid">
+          <div class="deliver-card reveal">
+            <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ><path d="M6 3h9l3 3v15H6z" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h4" stroke-linecap="round"/></svg>
+            <p>A 15 to 25 page report.</p>
+          </div>
+          <div class="deliver-card reveal">
+            <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ><path d="M6 21V4M6 4h11l-2 3.5L17 11H6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p>A one-page red-flag summary for the IC.</p>
+          </div>
+          <div class="deliver-card reveal">
+            <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01" stroke-linecap="round"/></svg>
+            <p>A 100-day value-creation lever list.</p>
+          </div>
+          <div class="deliver-card reveal">
+            <svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ><path d="M6 3l2 5-2 1c1 3 3 5 6 6l1-2 5 2v3c0 1-1 2-2 2C10 20 4 14 4 6c0-1 1-2 2-2z" stroke-linejoin="round"/></svg>
+            <p>An IC debrief call.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -196,10 +188,18 @@
           <h2>Our process</h2>
           <p class="lead">Scoping, then data request and desk analysis, management interviews, site and asset review, synthesis, and a report with a debrief. Two to four weeks from data access.</p>
         </div>
+        <div class="lifecycle">
+          <div class="lc-track">
+            <div class="lc-node reveal"><div class="lc-node__dot">1</div><h3>Scope &amp; data</h3><p>Define the questions, then desk analysis on the data room.</p></div>
+            <div class="lc-node reveal"><div class="lc-node__dot">2</div><h3>Interviews &amp; site</h3><p>Management interviews and a site and asset review.</p></div>
+            <div class="lc-node reveal"><div class="lc-node__dot">3</div><h3>Synthesis</h3><p>Connect commercial, operational, and asset findings.</p></div>
+            <div class="lc-node reveal"><div class="lc-node__dot">4</div><h3>Report &amp; debrief</h3><p>A written report, red-flag summary, and IC debrief.</p></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section--light">
+    <section class="section section--gray">
       <div class="container">
         <div class="section-head reveal">
           <span class="label">Why us</span>
@@ -215,7 +215,7 @@
       <div class="container">
         <h2 class="reveal">Bring us your next deal</h2>
         <div class="btn-row reveal">
-          <a href="contact.html?interest=pe" class="btn btn--primary">Bring us your next deal</a>
+          <a href="/contact?interest=pe" class="btn btn--primary">Bring us your next deal</a>
           <!-- Placeholder download. PDF to be produced by team and linked here later. -->
           <a href="/downloads/navex-due-diligence.pdf" class="btn btn--ghost">Download: Navex Due Diligence (PDF)</a>
         </div>
@@ -229,7 +229,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="brand" aria-label="Navex Capital home">
+          <a href="/" class="brand" aria-label="Navex Capital home">
             <svg viewBox="0 0 40 48" fill="none" aria-hidden="true">
               <path d="M20 6v38" stroke="#1C7E96" stroke-width="2.4"/>
               <path d="M8 14c0 7 5 11 12 11s12-4 12-11" stroke="#1C7E96" stroke-width="2.4"/>
@@ -244,21 +244,21 @@
         <div class="footer-col">
           <h4>Navigate</h4>
           <ul>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="insights.html">Insights</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/industries">Industries</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/insights">Insights</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Client sectors</h4>
           <ul>
-            <li><a href="industries.html">Maritime &amp; Shipping</a></li>
-            <li><a href="industries.html">Marine Services</a></li>
-            <li><a href="industries.html">Port &amp; Terminal Logistics</a></li>
-            <li><a href="industries.html">Transport &amp; Logistics</a></li>
+            <li><a href="/industries">Maritime &amp; Shipping</a></li>
+            <li><a href="/industries">Marine Services</a></li>
+            <li><a href="/industries">Port &amp; Terminal Logistics</a></li>
+            <li><a href="/industries">Transport &amp; Logistics</a></li>
           </ul>
         </div>
 
@@ -276,7 +276,7 @@
 
       <div class="footer-bottom">
         <span>&copy; 2026 Navex Capital LLC</span>
-        <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms of Service</a> &middot; <a href="#" class="cc-settings-link">Cookie Settings</a>
+        <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" class="cc-settings-link">Cookie Settings</a>
       </div>
     </div>
   </footer>

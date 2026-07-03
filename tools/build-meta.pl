@@ -39,23 +39,25 @@ my $GATED_TRACKERS = <<'EOT';
 EOT
 
 # page file => canonical path
+#  Paths are extension-less (Vercel cleanUrls: true serves foo.html at /foo and
+#  308-redirects /foo.html -> /foo). Canonicals/OG/sitemap therefore use clean URLs.
 my @pages = (
   ["index.html","/"],
-  ["services.html","/services.html"],
-  ["service-due-diligence.html","/service-due-diligence.html"],
-  ["service-value-creation.html","/service-value-creation.html"],
-  ["for-private-equity.html","/for-private-equity.html"],
-  ["for-owners.html","/for-owners.html"],
-  ["for-lenders.html","/for-lenders.html"],
-  ["industries.html","/industries.html"],
-  ["case-studies.html","/case-studies.html"],
-  ["about.html","/about.html"],
-  ["insights.html","/insights.html"],
-  ["contact.html","/contact.html"],
-  ["insight-operational-dd.html","/insight-operational-dd.html"],
-  ["privacy.html","/privacy.html"],
-  ["terms.html","/terms.html"],
-  ["404.html","/404.html"],
+  ["services.html","/services"],
+  ["service-due-diligence.html","/service-due-diligence"],
+  ["service-value-creation.html","/service-value-creation"],
+  ["for-private-equity.html","/for-private-equity"],
+  ["for-owners.html","/for-owners"],
+  ["for-lenders.html","/for-lenders"],
+  ["industries.html","/industries"],
+  ["case-studies.html","/case-studies"],
+  ["about.html","/about"],
+  ["insights.html","/insights"],
+  ["contact.html","/contact"],
+  ["insight-operational-dd.html","/insight-operational-dd"],
+  ["privacy.html","/privacy"],
+  ["terms.html","/terms"],
+  ["404.html","/404"],
 );
 
 for my $p (@pages) {
