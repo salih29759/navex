@@ -459,9 +459,16 @@ p { color: var(--text); }
 
 /* ---------- Lifecycle strip ---------- */
 .lifecycle { margin-top: 3rem; }
-.lc-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
-.lc-track::before { content: ""; position: absolute; top: 19px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-soft)); opacity: .45; z-index: 0; }
+/* auto-columns: one equal track per step, so the row fits any step count (3, 4, ...) */
+.lc-track { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 1.5rem; position: relative; }
 .lc-node { position: relative; z-index: 1; }
+/* connector: from this dot's center (20px) to the next dot's center (one track + gap),
+   drawn behind the opaque dots so the line runs cleanly first-circle to last-circle */
+.lc-node:not(:last-child)::after {
+  content: ""; position: absolute; top: 19px; left: 20px;
+  width: calc(100% + 1.5rem); height: 2px; background: var(--line); z-index: -1;
+}
+.section--dark .lc-node:not(:last-child)::after { background: var(--line-dark); }
 .lc-node__dot { width: 40px; height: 40px; border-radius: 50%; background: var(--white); border: 2px solid var(--gold); color: var(--navy); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: .95rem; margin-bottom: 1rem; }
 .lc-node h3 { font-size: 1.06rem; margin-bottom: .35rem; }
 .lc-node p { color: var(--muted); font-size: .92rem; }
@@ -736,8 +743,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .deliver-grid { grid-template-columns: 1fr 1fr; }
   .gap-row, .risk-grid, .lanes, .paths, .scenarios { grid-template-columns: 1fr; }
   .reassure { grid-template-columns: 1fr; }
-  .lc-track { grid-template-columns: 1fr 1fr; }
-  .lc-track::before { display: none; }
+  .lc-track { grid-auto-flow: row; grid-template-columns: 1fr 1fr; }
+  .lc-node:not(:last-child)::after { display: none; }
   .points-3 { grid-template-columns: 1fr 1fr; }
   .post-card--featured { flex-direction: column; }
   .post-card--featured .post-card__img { flex: auto; aspect-ratio: 16 / 10; min-height: 0; }
