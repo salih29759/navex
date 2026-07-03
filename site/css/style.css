@@ -390,6 +390,8 @@ p { color: var(--text); }
 .case-card dd { margin: 0; color: var(--muted); font-size: .95rem; }
 .case-card dd.result { color: var(--text); font-weight: 500; }
 .case-card dd.result b { color: var(--gold); font-weight: 700; }
+.case-card__intro { color: var(--text); font-size: .97rem; margin: 0; }
+.case-card blockquote { margin: .2rem 0 0; padding-left: .9rem; border-left: 2px solid var(--gold); color: var(--navy); font-weight: 600; font-style: italic; font-size: .98rem; line-height: 1.4; }
 .case-card__src { margin-top: auto; font-size: .8rem; color: var(--muted); font-style: italic; }
 
 /* ---------- Legal / prose ---------- */
