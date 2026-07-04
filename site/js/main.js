@@ -195,6 +195,9 @@
           }
           f.reset();
           track(f.getAttribute("data-event") || "form_submit");
+          if (f.getAttribute("data-event") === "contact_submit" && window.lintrk) {
+            window.lintrk('track', { conversion_id: 28785922 });
+          }
         })
         .catch(function () {
           if (status) {
