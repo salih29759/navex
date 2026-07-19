@@ -497,7 +497,9 @@ p { color: var(--text); }
 .point::before, .value::before { content: ""; position: absolute; top: 0; left: 0; width: 32px; height: 2px; background: var(--gold); }
 
 /* ---------- Founder quote ---------- */
-.founder-quote { max-width: 36ch; margin: 0 0 2.6rem; }
+/* Founder intro: kicker + heading (left) beside the pull-quote (right); stacks on mobile */
+.founder-intro { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; margin-bottom: 1rem; }
+.founder-quote { margin: 0; }
 .founder-quote blockquote { margin: 0; font-size: clamp(1.4rem, 2.8vw, 2.1rem); font-weight: 600; line-height: 1.26; letter-spacing: -.02em; color: var(--navy); }
 .founder-quote cite { display: block; margin-top: 1rem; font-size: .95rem; font-style: normal; color: var(--muted); }
 
@@ -561,6 +563,8 @@ p { color: var(--text); }
 .team-member__body { display: flex; flex-direction: column; gap: .12rem; }
 .team-member__body strong { font-size: 1.05rem; color: var(--navy); font-weight: 700; }
 .team-member__body span { color: var(--muted); font-size: .95rem; }
+/* member title: same treatment as the founder's role line (teal, semibold) */
+.team-member__body .team-member__role { color: var(--gold); font-weight: 600; font-size: .9rem; }
 .team-member__loc { font-size: .86rem; opacity: .9; }
 
 /* ---------- Them vs. us contrast ---------- */
@@ -745,6 +749,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .industry-row { grid-template-columns: 1fr; gap: 1.2rem; }
   .industry-row .industry-row__media { order: -1; }
   .values-grid { grid-template-columns: 1fr 1fr; }
+  .founder-intro { grid-template-columns: 1fr; gap: 1.4rem; align-items: start; }
   .founder { grid-template-columns: 1fr; text-align: left; }
   .post-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
